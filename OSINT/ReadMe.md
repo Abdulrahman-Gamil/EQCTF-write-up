@@ -1,16 +1,12 @@
-# OSINT Challenges
-
-This document outlines the walkthrough and explanations for the OSINT challenges. Each challenge requires careful analysis and creative problem-solving skills to uncover the required flags.
-
+# 🕵️‍♂️ **OSINT Challenges**
 ---
 
-## **Challenge Overview**
-1. **Garry: Beyond Music's End 1**
-2. **Garry: Beyond Music's End 2**
-3. **Garry: Beyond Music's End 3**
-4. **Garry: Beyond Music's End 4**
+## 🚩 **Challenge Overview**
+1. **Garry: Beyond Music's End 1**  
+2. **Garry: Beyond Music's End 2**  
+3. **Garry: Beyond Music's End 3**  
+4. **Garry: Beyond Music's End 4**  
 5. **Lost at Sea**
-
 ---
 
 ## **1. Garry: Beyond Music's End 1**
@@ -91,3 +87,239 @@ Format it to the specified flag format:
 
 ### **Challenge Flag**
 **EQCTF{undead_wizard_songs_around_the_world}**
+
+
+
+
+
+
+## **2. Garry: Beyond Music's End 2**
+
+### **Challenge Description**
+![Challenge Image](https://github.com/user-attachments/assets/22ff513c-50f8-4406-9fbf-897842cf49e8)
+
+- Garry has sent a video featuring a comically large KFC bucket, but **Master Warlock** needs to know the **location** where it was filmed.  
+- The **flag format** is: `EQCTF{X.XXX,Y.YYY}`.
+
+---
+
+### **Walkthrough**
+
+#### **Step 1: Locate the Video in Discord**
+Since we already joined the Discord server in the previous challenge, the next step is to locate the video Garry posted.
+
+![Discord Screenshot](https://github.com/user-attachments/assets/f9535fed-19ef-4110-869b-afe21fd612ae)
+
+Analyzing the video, we can see a location reference in the content. It mentions a place called **Starhill**.
+
+---
+
+#### **Step 2: Research the Location**
+Using **Google search** for "Starhill location," we discover the area corresponds to a location in **Kuala Lumpur, Malaysia**.
+
+![Google Search](https://github.com/user-attachments/assets/4c821328-f784-41ec-9685-f5e59608886b)
+
+---
+
+#### **Step 3: Pinpoint the Exact Location on Google Maps**
+Using **Google Maps Street View**, we carefully match the scene in the video with the real-world location. This helps us identify the exact spot Garry filmed the video.
+
+![Google Maps Street View](https://github.com/user-attachments/assets/de1f68b0-0567-4be5-becc-b4ccffd30741)
+
+---
+
+#### **Step 4: Extract Coordinates**
+From the Google Maps URL of the identified location, we extract the coordinates in the format `X.XXX, Y.YYY`.  
+In this case, the coordinates are: **3.148, 101.712**.
+
+![Extracting Coordinates](https://github.com/user-attachments/assets/69fdbc3b-b48f-4849-9e4f-05eb2c217134)
+
+---
+
+### **Challenge Flag**
+**EQCTF{3.148,101.712}**
+
+
+
+
+
+## **3. Garry: Beyond Music's End 3**
+
+### **Challenge Description**
+![Challenge Image](https://github.com/user-attachments/assets/bba05b32-55a0-48ed-bfb4-ca611db06866)
+
+- Garry and his friends are discussing a new **threat group** that appears to be stealing wizard data.  
+- The objective is to uncover what the threat group has done and locate the stolen data.  
+- **Flag format:** `EQCTF{...}`.
+
+---
+
+### **Walkthrough**
+
+#### **Step 1: Gather Clues on Discord**
+Returning to the Discord server, we analyze the messages:
+
+1. Garry mentions:
+   > *"Pretty sure they stole a bunch of wizard data and stored it in their repository or something."*  
+   This suggests the data may be stored in a repository.
+
+2. Master Warlock also talks about the data being stolen by a group called **Larry Da Pinchi**.  
+3. Star Warlock adds:
+   > *"I heard they were contributing to multiple data breaches this year. I managed to get some information on the stolen wizard data: `4feXXX` (seems broken though)."*  
+   The partial string `4feXXX` hints at a **commit hash** or identifier related to the repository.
+
+![Discord Conversation](https://github.com/user-attachments/assets/ff65bfd5-6985-4839-9572-ed0c0b7a16df)
+
+---
+
+#### **Step 2: Search for the Repository**
+Using **GitHub**, we search for the name **Larry Da Pinchi**. This leads us to an account with only one branch (`main`).  
+
+![GitHub Profile](https://github.com/user-attachments/assets/92854b70-4d2d-4844-89b9-90e6b17c0644)  
+![GitHub Branch](https://github.com/user-attachments/assets/7c9cc097-695a-4a1f-a691-fadc26ef223a)
+
+---
+
+#### **Step 3: Investigate Recent Activity**
+The branch shows that it was updated **a week ago**, but the update doesn’t appear to be made by Larry Da Pinchi. Clicking on the activity, we discover three recent commits.  
+
+One of the commits is titled:  
+> *"hehe gottem"*  
+
+This suspicious commit hints that it might contain the stolen data or the flag.  
+
+![Commit History](https://github.com/user-attachments/assets/b525264f-4a8d-4fe5-a48c-b105a468ab12)
+
+---
+
+#### **Step 4: Extract the Flag**
+view the commit, we examine the changes in the commit history. By searching for the string **EQCTF** using `CTRL+F`, we uncover the flag hidden within the commit message.
+
+![Flag in Commit](https://github.com/user-attachments/assets/6c744689-7da5-4105-8950-90abb1befd54)
+
+---
+
+### **Challenge Flag**
+**EQCTF{w1z4rd_0f_l3g3nds_1n_d1sgu1s3}**
+
+
+## **4. Garry: Beyond Music's End 4**
+
+### **Challenge Description**
+![Challenge Image](https://github.com/user-attachments/assets/b3c227d9-1265-40ce-a804-fc4f2cc67f34)
+
+- Garry made a new post and is excited about becoming a Supreme Wizard.  
+- The task is to determine **where the ceremony is happening**.  
+- **Flag format:** `EQCTF{name_of_the_location}`.
+
+---
+
+### **Walkthrough**
+
+#### **Step 1: Analyze Garry's Post**
+Garry posted on X, saying:  
+> *"Gonna be a supreme wizard today! Hope I can run fast enough to the ceremony."*
+
+The post includes a **GIF** of someone running, and its **ALT text** (Image Description) contains a hidden link:  
+**https://anotepad.com/notes/tmnif5r7**
+
+![X Post](https://github.com/user-attachments/assets/1b8ccd11-97a2-4930-8375-7d776f77d2e9)  
+![ALT Text](https://github.com/user-attachments/assets/063ed9b6-06fe-4da0-a300-a1afd7c402aa)
+
+---
+
+#### **Step 2: Access the Note**
+Opening the link reveals a note titled **Password** with an encrypted string.  
+The encryption appears to be **Brainfuck cipher**.  
+
+![Note Content](https://github.com/user-attachments/assets/cdd46729-b2a8-4d50-a747-936650452e0a)  
+![Cipher Identification](https://github.com/user-attachments/assets/964fc483-1aa0-490a-b374-416b1396eee9)
+
+---
+
+#### **Step 3: Decrypt the Password**
+Using a Brainfuck decryption tool, the encrypted string reveals a Discord invite link:  
+**https://discord.gg/8zbzUKM39y**
+
+![Decrypted Password](https://github.com/user-attachments/assets/dd013f88-5823-4e55-88c5-ae1cca1b5a8e)
+
+---
+
+#### **Step 4: Join the Discord Server**
+After joining the server, we see Garry’s messages discussing the ceremony location:  
+
+- Garry mentions:  
+  > *"Today will be the day I reign as the supreme wizard."*  
+
+- When asked about the meeting place, Garry provides a code:  
+  **5P47+6W**
+
+![Discord Conversation](https://github.com/user-attachments/assets/a802fbdf-c92d-4e3c-bf6b-7dd141d03af1)
+
+---
+
+#### **Step 5: Decode the Location**
+The code **5P47+6W** is identified as a **Google Plus Code**. Using a Plus Code decoding tool, we determine the location to be **Kuala Lumpur City Center (KLC)**.
+
+![Plus Code Identification](https://github.com/user-attachments/assets/d626210f-979a-4d7a-8c38-beeacd8b937a)  
+![Location on Map](https://github.com/user-attachments/assets/4d50c021-87e4-4068-bf0c-7d398d5cf2b6)
+
+---
+
+### **Challenge Flag**
+**EQCTF{KLCC_Park}**
+
+
+
+## **5. Lost at Sea**
+
+### **Challenge Description**
+![Challenge Image](https://github.com/user-attachments/assets/440fcf6a-eecd-4714-8340-7fc6fd84df21)
+
+- Garry has posted a picture of an interesting scene and challenges us to locate it.  
+- The objective is to identify the location in the image.  
+- **Flag format:** `EQCTF{latitude_longitude}`.
+
+---
+
+### **Walkthrough**
+
+#### **Step 1: Analyze the Image**
+The image contains a unique **large cube structure**, making it a good candidate for reverse image searching.  
+
+![LostAtSea](https://github.com/user-attachments/assets/e1b8948c-334f-4e3b-b2dc-22fefef5bb73)
+
+---
+
+#### **Step 2: Use Google Lens**
+Using **Google Lens**, we identify the large cube structure as the **Orange Cube**, a well-known architectural landmark.  
+
+![Google Lens Result](https://github.com/user-attachments/assets/5bbfa3b4-a273-473b-83df-9325fe02a51d)
+
+---
+
+#### **Step 3: Search for the Location on Google Maps**
+Searching for the **Orange Cube** on Google Maps leads us to its location in Lyon, France.  
+Now, we need to use **Google Street View** to match the exact angle of the image.  
+
+![Orange Cube Location on Maps](https://github.com/user-attachments/assets/55fc326e-e99e-4c9c-b1ec-4966cfad9e5d)
+
+---
+
+#### **Step 4: Verify the Location in Street View**
+Using Street View, we find the exact spot where the image was taken, ensuring the angle and perspective match.  
+
+![Street View Match](https://github.com/user-attachments/assets/5cbc30ff-a2ee-4938-83ad-8b4c521266a3)
+
+---
+
+#### **Step 5: Extract Latitude and Longitude**
+From the Google Maps URL of the matched location, we extract the coordinates:  
+**Latitude:** `45.7398972`  
+**Longitude:** `4.8132442`  
+
+---
+
+### **Challenge Flag**
+**EQCTF{45.7398972_4.8132442}**
+
