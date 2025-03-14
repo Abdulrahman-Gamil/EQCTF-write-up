@@ -1,4 +1,4 @@
-# 🕵️‍♂️ **OSINT Challenges**
+![image](https://github.com/user-attachments/assets/ead457d5-87eb-485c-a233-e4678d04315d)# 🕵️‍♂️ **OSINT Challenges**
 ---
 
 ## 🚩 **Challenge Overview**
@@ -323,3 +323,60 @@ From the Google Maps URL of the matched location, we extract the coordinates:
 ### **Challenge Flag**
 **EQCTF{45.7398972_4.8132442}**
 
+
+
+
+## **6. Stream Sniper**
+
+### **Challenge Description**
+![Challenge Image](https://github.com/user-attachments/assets/9b07977a-5c7f-4aa0-b8f2-86de572fb872)
+
+- A friend was stream-sniping a Twitch streamer in Kuala Lumpur (KL), and I sent a donation message to the streamer to tell him to sleep. The challenge is to determine the name of the building next to her while she was strolling around.  
+- **Flag format:** `EQCTF{building_name_according_to_google_maps}`
+
+---
+
+### **Walkthrough**
+
+#### **Step 1: Analyze the Video for Clues**
+The video provides initial clues about the location. We can see:  
+- A two-way street on the right-hand side.  
+- An underground bridge nearby.  
+- A furniture store on the left-hand side.  
+These details will help narrow down the location in Kuala Lumpur.  
+
+![Video Clues](https://github.com/user-attachments/assets/96c0ad86-5f7e-4cb0-86d9-621b8fd3b5e2)
+
+---
+
+#### **Step 2: Identify a Key Landmark**
+At the beginning of the video, a logo for **Berjaya Times Square** in Kuala Lumpur is visible. This major landmark gives us a starting point for the investigation.  
+
+![Times Square Logo](https://github.com/user-attachments/assets/7065eab7-ffe0-4234-94f1-ad4e31c0358e)
+
+---
+
+#### **Step 3: Confirm the Location on Google Maps**
+Using **Google Maps**, we search for Berjaya Times Square in Kuala Lumpur. Examining the surrounding area, we look for a match with the video’s clues: a two-way street, an underground bridge, and a furniture store. The map confirms that the area around Berjaya Times Square aligns with these features.  
+
+![Google Maps Confirmation](https://github.com/user-attachments/assets/31540d92-00ea-4b1e-8e06-98fde7d0c065)
+
+---
+
+#### **Step 4: Pinpoint the Exact Spot**
+Using **Google Street View**, we explore the area near Berjaya Times Square to find the exact spot where the video was filmed. The two-way street on the right and the underground bridge are visible, matching the scene from the video.  
+
+![Street View Match](https://github.com/user-attachments/assets/90a09ccf-7af2-48a2-bcab-8e17e825f9ec)
+
+---
+
+#### **Step 5: Verify with the Furniture Store and Identify the Building**
+To double-check, we locate the furniture store seen on the left-hand side of the video. It’s present in the Street View imagery, confirming the spot. Next, we identify the building adjacent to this location on Google Maps: **societyM meeting rooms Kuala Lumpur**.  
+
+![Furniture Store Confirmation](https://github.com/user-attachments/assets/3daca903-b40a-4a53-b7ed-eb4533d99597)  
+![Building Name](https://github.com/user-attachments/assets/66cf12a0-c62e-4f1b-99d2-c2bd6b97a53c)
+
+---
+
+### **Challenge Flag**
+**EQCTF{societyM_meeting_rooms_Kuala_Lumpur}**
