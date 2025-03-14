@@ -7,6 +7,7 @@
 3. **Garry: Beyond Music's End 3**  
 4. **Garry: Beyond Music's End 4**  
 5. **Lost at Sea**
+6. **Stream Sniper**
 ---
 
 ## **1. Garry: Beyond Music's End 1**
